@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjqy4p6raj5km"]
+
+[ext_resource type="Texture2D" uid="uid://ceitxr0g0xaea" path="res://icon.svg" id="1_6oguc"]
+[ext_resource type="AudioStream" uid="uid://cjkovl530ymkb" path="res://Cry - Cigarettes After Sex.mp3" id="2_5cdbh"]
+[ext_resource type="AudioStream" uid="uid://df0onxa3u7nh8" path="res://310. Intimacy [2016-06-19].mp3" id="4_wh1xf"]
+[ext_resource type="Script" path="res://lin_mapping.gd" id="5_n6i66"]
+
+[node name="linear_mapping" type="Node2D"]
+
+[node name="audio_and_modulate" type="Sprite2D" parent="."]
+modulate = Color(0, 0.0627451, 1, 1)
+position = Vector2(32, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_6oguc")
+
+[node name="cry" type="AudioStreamPlayer" parent="audio_and_modulate"]
+stream = ExtResource("2_5cdbh")
+volume_db = -40.0
+autoplay = true
+
+[node name="lin_map_pos_audio" type="Node" parent="audio_and_modulate/cry"]
+script = ExtResource("5_n6i66")
+desired_property = "volume_db"
+max_value_float = -20.0
+min_value_float = -40.0
+
+[node name="lin_map_custom_property" type="Node" parent="audio_and_modulate"]
+script = ExtResource("5_n6i66")
+desired_property = "modulate"
+max_value_float = 0.9
+min_value_float = 0.1
+min_value_vector2 = Vector2(300, 300)
+max_value_color = Color(1, 0, 0, 1)
+min_value_color = Color(0, 0.0627451, 1, 1)
+
+[node name="audio_and_flipv" type="Sprite2D" parent="."]
+position = Vector2(366, 32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_6oguc")
+
+[node name="intimacy" type="AudioStreamPlayer" parent="audio_and_flipv"]
+stream = ExtResource("4_wh1xf")
+volume_db = -60.0
+autoplay = true
+
+[node name="lin_map_pos_audio" type="Node" parent="audio_and_flipv/intimacy"]
+script = ExtResource("5_n6i66")
+desired_property = "volume_db"
+max_distance_to_min_value = 50.0
+max_value_float = -20.0
+min_value_float = -60.0
+
+[node name="lin_map_custom_property" type="Node" parent="audio_and_flipv"]
+script = ExtResource("5_n6i66")
+desired_property = "flip_v"
+max_value_float = 0.9
+min_value_float = 0.1
+min_value_vector2 = Vector2(300, 300)
+max_value_color = Color(1, 0, 0, 1)
+min_value_color = Color(0.168627, 0.266667, 0.423529, 0)
+
+[node name="modulate_alpha" type="Sprite2D" parent="."]
+position = Vector2(192, 165)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_6oguc")
+
+[node name="lin_map_custom_property" type="Node" parent="modulate_alpha"]
+script = ExtResource("5_n6i66")
+desired_property = "modulate"
+max_distance_to_min_value = 100.0
+max_value_float = 0.9
+min_value_float = 0.1
+min_value_vector2 = Vector2(300, 300)
+max_value_color = Color(1, 1, 1, 1)
+min_value_color = Color(0.168627, 0.266667, 0.423529, 0)
+
+[node name="scale" type="Sprite2D" parent="."]
+position = Vector2(104, 121)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_6oguc")
+
+[node name="lin_map_custom_property" type="Node" parent="scale"]
+script = ExtResource("5_n6i66")
+desired_property = "scale"
+max_distance_to_min_value = 100.0
+max_value_float = 0.9
+min_value_float = 0.1
+max_value_vector2 = Vector2(0.25, 0.25)
+max_value_color = Color(1, 1, 1, 1)
+min_value_color = Color(0.168627, 0.266667, 0.423529, 0)
+
+[node name="scale2" type="Sprite2D" parent="."]
+position = Vector2(309, 121)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_6oguc")
+
+[node name="lin_map_custom_property" type="Node" parent="scale2"]
+script = ExtResource("5_n6i66")
+desired_property = "scale"
+max_distance_to_min_value = 100.0
+max_value_float = 0.9
+min_value_float = 0.1
+min_value_vector2 = Vector2(0.25, 0.25)
+max_value_color = Color(1, 1, 1, 1)
+min_value_color = Color(0.168627, 0.266667, 0.423529, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 208.0
+offset_top = 81.0
+offset_right = 209.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lin_map_label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lin_map_text" type="Node" parent="MarginContainer/lin_map_label"]
+script = ExtResource("5_n6i66")
+desired_property = "text"
+max_distance_to_min_value = 20.0
+additional_gap = 10.0
+max_value_string = "d"
+min_value_string = "FAAAAAAAAAAAAR"

@@ -1,0 +1,11 @@
+Label
+Control
+MarginContainer
+Node
+Sprite2D
+Node2D
+AudioStreamPlayer
+AudioStreamPlayer2D
+Camera2D
+WorldEnvironment
+CharacterBody2D

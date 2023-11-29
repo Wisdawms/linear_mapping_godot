@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df0onxa3u7nh8"
+path="res://.godot/imported/310. Intimacy [2016-06-19].mp3-d72d4faeffc41a10bb1f5b9be61720ac.mp3str"
+
+[deps]
+
+source_file="res://310. Intimacy [2016-06-19].mp3"
+dest_files=["res://.godot/imported/310. Intimacy [2016-06-19].mp3-d72d4faeffc41a10bb1f5b9be61720ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

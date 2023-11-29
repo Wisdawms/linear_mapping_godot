@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjkovl530ymkb"
+path="res://.godot/imported/Cry - Cigarettes After Sex.mp3-0799b9fee2e62d31dfe784669792334b.mp3str"
+
+[deps]
+
+source_file="res://Cry - Cigarettes After Sex.mp3"
+dest_files=["res://.godot/imported/Cry - Cigarettes After Sex.mp3-0799b9fee2e62d31dfe784669792334b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
