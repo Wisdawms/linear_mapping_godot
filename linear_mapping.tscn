@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjqy4p6raj5km"]
 
 [ext_resource type="Texture2D" uid="uid://ceitxr0g0xaea" path="res://icon.svg" id="1_6oguc"]
-[ext_resource type="AudioStream" uid="uid://cjkovl530ymkb" path="res://Cry - Cigarettes After Sex.mp3" id="2_5cdbh"]
-[ext_resource type="AudioStream" uid="uid://df0onxa3u7nh8" path="res://310. Intimacy [2016-06-19].mp3" id="4_wh1xf"]
+[ext_resource type="AudioStream" uid="uid://dnsuxuereb0up" path="res://Vibing Over Venus.mp3" id="2_wiw24"]
+[ext_resource type="AudioStream" uid="uid://bmes4ue73xyqj" path="res://Evening.mp3" id="4_egocm"]
 [ext_resource type="Material" uid="uid://b8dlslukegml5" path="res://materials/far.tres" id="5_6sbpa"]
 [ext_resource type="Material" uid="uid://uk8bq2d8p8vw" path="res://materials/near.tres" id="5_bpvt8"]
 [ext_resource type="Script" path="res://lin_mapping.gd" id="5_n6i66"]
@@ -15,12 +15,12 @@ position = Vector2(32, 32)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_6oguc")
 
-[node name="cry" type="AudioStreamPlayer" parent="audio_and_modulate"]
-stream = ExtResource("2_5cdbh")
+[node name="audio" type="AudioStreamPlayer" parent="audio_and_modulate"]
+stream = ExtResource("2_wiw24")
 volume_db = -40.0
 autoplay = true
 
-[node name="lin_map_pos_audio" type="Node" parent="audio_and_modulate/cry"]
+[node name="lin_map_pos_audio" type="Node" parent="audio_and_modulate/audio"]
 script = ExtResource("5_n6i66")
 desired_property = "volume_db"
 max_value_float = -20.0
@@ -40,12 +40,12 @@ position = Vector2(366, 32)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_6oguc")
 
-[node name="intimacy" type="AudioStreamPlayer" parent="audio_and_flipv"]
-stream = ExtResource("4_wh1xf")
+[node name="audio" type="AudioStreamPlayer" parent="audio_and_flipv"]
+stream = ExtResource("4_egocm")
 volume_db = -60.0
 autoplay = true
 
-[node name="lin_map_pos_audio" type="Node" parent="audio_and_flipv/intimacy"]
+[node name="lin_map_pos_audio" type="Node" parent="audio_and_flipv/audio"]
 script = ExtResource("5_n6i66")
 desired_property = "volume_db"
 max_distance_to_min_value = 50.0
