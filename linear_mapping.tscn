@@ -60,6 +60,7 @@ min_value_float = 0.1
 min_value_vector2 = Vector2(300, 300)
 max_value_color = Color(1, 0, 0, 1)
 min_value_color = Color(0.168627, 0.266667, 0.423529, 0)
+max_value_bool = true
 
 [node name="modulate_alpha" type="Sprite2D" parent="."]
 position = Vector2(202, 165)
@@ -125,24 +126,6 @@ min_value_bool = true
 max_value_resource = ExtResource("5_bpvt8")
 min_value_resource = ExtResource("5_6sbpa")
 
-[node name="material2" type="Sprite2D" parent="."]
-position = Vector2(293, 121)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_6oguc")
-
-[node name="lin_map_custom_property" type="Node" parent="material2"]
-script = ExtResource("5_n6i66")
-desired_property = "material"
-max_distance_to_min_value = 100.0
-max_value_float = 0.9
-min_value_float = 0.1
-min_value_vector2 = Vector2(0.25, 0.25)
-max_value_color = Color(1, 1, 1, 1)
-min_value_color = Color(0.168627, 0.266667, 0.423529, 0)
-min_value_bool = true
-max_value_resource = ExtResource("5_bpvt8")
-min_value_resource = ExtResource("5_6sbpa")
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,3 +152,22 @@ max_distance_to_min_value = 20.0
 additional_gap = 10.0
 max_value_string = "near"
 min_value_string = "FAR"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 248.0
+offset_top = 57.0
+offset_right = 322.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "button"
+
+[node name="lin_map_custom_property" type="Node" parent="Button"]
+script = ExtResource("5_n6i66")
+desired_property = "theme_override_colors/font_color"
+max_distance_to_min_value = 50.0
+max_value_float = 0.9
+min_value_float = 0.1
+min_value_vector2 = Vector2(300, 300)
+max_value_color = Color(1, 0, 0, 1)
+min_value_color = Color(0, 0.384314, 1, 1)
+max_value_bool = true

@@ -189,7 +189,8 @@ func _process(_delta: float) -> void:
 	elif vector_parent is Control:
 		print(vector_parent.size)
 		origin_gap = vector_parent.get_rect().size.x / 2 * vector_parent.scale.x
-		vector_parent.get_child(0).pivot_offset = vector_parent.get_child(0).size / 2
+		if vector_parent.get_child(0) is Label:
+			vector_parent.get_child(0).pivot_offset = vector_parent.get_child(0).size / 2
 		vector_parent.pivot_offset = vector_parent.size / 2
 
 	# Get the mouse position
